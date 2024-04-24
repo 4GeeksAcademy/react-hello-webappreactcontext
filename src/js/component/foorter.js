@@ -10,8 +10,8 @@ export const Footer = () => {
                 <h1>   Desarrollado by</h1>
                 <div className="logo">
                     <div className="corcheteIzquierda">{'{'}</div>
-                    <div className="a">D</div>
-                    <div className="m">V</div>
+                    <div className="a">A</div>
+                    <div className="m">M</div>
                     <div className="d">D</div>
                     <div className="e">_ev</div>
                     <div className="corcheteDerecha">{'}'}</div>
