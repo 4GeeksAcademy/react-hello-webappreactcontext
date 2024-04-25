@@ -31,7 +31,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 							return response.json();
 						} else {
 							if (response.status === 404) {
-								getActions().crearUsuario(); // Llamar a la función crearUsuario
+								getActions().crearUsuario(); 
 							}
 						}
 					})
@@ -118,6 +118,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 							if (resp.status == 200) {
 								console.log(resp)
 								alert("Contacto eliminado exitosamente")
+								getActions().cargarContactos()
 							} else return resp.json();
 						})
 						.then(resp => console.log(resp))

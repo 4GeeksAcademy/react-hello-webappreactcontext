@@ -35,6 +35,8 @@ export const Editar = () => {
                   NOMBRE COMPLETO
                 </label>
                 <input
+                  maxLength="15"
+                  size="15"
                   type="text"
                   value={contacto.name}
                   id="nombreCompleto"
@@ -50,6 +52,9 @@ export const Editar = () => {
                   EMAIL
                 </label>
                 <input
+                  required
+                  maxLength="20"
+                  size="20"
                   type="text"
                   value={contacto.email}
                   id="email"
@@ -65,6 +70,8 @@ export const Editar = () => {
                   TELEFONO
                 </label>
                 <input
+                  maxLength="15"
+                  size="15"
                   type="text"
                   value={contacto.phone}
                   id="telefono"
@@ -80,6 +87,8 @@ export const Editar = () => {
                   DIRECCION
                 </label>
                 <input
+                  maxLength="15"
+                  size="15"
                   type="text"
                   value={contacto.address}
                   id="direccion"
@@ -89,7 +98,7 @@ export const Editar = () => {
                     setContacto({ ...contacto, address: e.target.value })
                   }
                 />
-              </div>              
+              </div>
               <div className="mb-3">
                 <div className="form-check"></div>
               </div>

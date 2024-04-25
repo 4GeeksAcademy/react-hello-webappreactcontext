@@ -18,7 +18,7 @@ export const Formulario = () => {
     actions.crearContacto(contacto, navigate);
   };
 
-  
+
   return (
     <div className="container mt-4 contenedorAnadirContacto">
       <div className="card cardAnadirContacto">
@@ -30,10 +30,13 @@ export const Formulario = () => {
                 Nombre completo
               </label>
               <input
+                maxLength="15"
+                size="15"
                 type="text"
+                required
                 id="nombreCompleto"
                 className="form-control"
-                placeholder="Nombre completo"
+                placeholder="Nombre completo... máximo 15 caracteres"
                 onChange={(e) =>
                   setContacto({ ...contacto, name: e.target.value })
                 }
@@ -44,7 +47,9 @@ export const Formulario = () => {
                 Email
               </label>
               <input
-                type="text"
+                maxLength="20"
+                size="20"
+                type="email"
                 id="email"
                 className="form-control"
                 placeholder="Email"
@@ -58,6 +63,8 @@ export const Formulario = () => {
                 Telefono
               </label>
               <input
+                maxLength="15"
+                size="15"
                 type="text"
                 id="telefono"
                 className="form-control"
@@ -72,6 +79,8 @@ export const Formulario = () => {
                 Dirección
               </label>
               <input
+                maxLength="20"
+                size="20"
                 type="text"
                 id="direccion"
                 className="form-control"
