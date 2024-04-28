@@ -107,24 +107,27 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			eliminarContacto: (id) => {
-				return (
-					fetch(`https://playground.4geeks.com/contact/agendas/david/contacts/${id}`, {
-						method: "DELETE",
-						headers: {
-							"Content.type": "application/json"
-						}
-					})
-						.then(resp => {
-							if (resp.status == 200) {
-								console.log(resp)
-								alert("Contacto eliminado exitosamente")
-								getActions().cargarContactos()
-							} else return resp.json();
-						})
-						.then(resp => console.log(resp))
-						.catch(error => console.log(error))
-				)
+				return fetch(`https://playground.4geeks.com/contact/agendas/david/contacts/${id}`, {
+					method: "DELETE",
+					headers: {
+						"Content-Type": "application/json"
+					}
+				})
+				.then(resp => {
+					if (resp.ok) {
+						console.log(resp);						
+						getActions().cargarContactos();
+					} else {
+						return resp.json().then(data => {
+							console.log(data);
+						});
+					}
+				})
+				.catch(error => {
+					console.log(error);
+				});
 			}
+			
 
 
 
